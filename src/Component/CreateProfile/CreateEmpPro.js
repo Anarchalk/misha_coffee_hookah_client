@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import AlgoliaPlaces from "algolia-places-react";
-// import TokenService from "../../services/token-service";
-// import AppContext from "../../Component/AppContext";
+ import TokenService from "../../services/token-service";
+ import AppContext from "../../Component/AppContext";
+import { Link } from "react-router-dom";
 import "../../AlgoliaPlaces.css";
 import config from "../../config";
 import './create-emp-profile.css'
 
 export default class CreateEmpPro extends Component {
+  static contextType = AppContext;
+
   state = {
     company_name: "",
     about_us: "",
@@ -25,6 +28,10 @@ export default class CreateEmpPro extends Component {
   };
 
   handleSubmit = (e) => {
+    const token = TokenService.hasAuthToken()
+    ? TokenService.readJwtToken()
+    : { user_id: "" }
+const { user_id } = token
     e.preventDefault();
     fetch(`${config.API_ENDPOINT}/empprofile`, {
       method: "POST",
@@ -40,23 +47,23 @@ export default class CreateEmpPro extends Component {
         location: this.state.location,
         fax: this.state.fax,
         website: this.state.website,
-        user_id: this.context.userInfo.user_id,
+        user_id: user_id,
       }),
     })
       .then((res) => {
         if (!res.ok) return res.json().then((e) => Promise.reject(e));
         return res.json();
       })
-      .then((empPro) => {
-        console.log(empPro);
-        this.props.history.push("/emp-profile");
+      .then((profile) => {
+        this.context.createEmpProfile(profile)
+        this.props.history.push("/empprofile");
       });
   };
 
   handleAddress = (suggestion) => {
     const { name, city, administrative, postcode } = suggestion;
     this.setState({
-      location: `${name}, ${city}, ${administrative} ${postcode}`,
+      location: `${name || ''}, ${city || ''}, ${administrative || ''} ${postcode || ''}`,
     });
   };
   render() {
@@ -88,7 +95,7 @@ export default class CreateEmpPro extends Component {
               name="phone"
               id="phone"
               className="input"
-              value={this.state.tel}
+              value={this.state.phone}
               required
             />
             <br />
@@ -110,11 +117,11 @@ export default class CreateEmpPro extends Component {
             </label>
             <input
               onChange={this.handleChange}
-              type="website"
+              type="url"
               name="website"
               id="website"
               className="input"
-              value={this.state.url}
+              value={this.state.website}
               required
             />
             <br />
@@ -171,10 +178,14 @@ export default class CreateEmpPro extends Component {
           /> */}
             {/* <button id="fileSelect">Select file</button>         */}
             <br />
-            <input type="submit" value="create" />
+            <input type="submit" value="Create" />
+          <Link to="/empprofile">
+            <button>Cancel</button>
+          </Link>
           </form>
         </section>
-      </>
+        </>
+    
     );
   }
 }

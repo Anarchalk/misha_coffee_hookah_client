@@ -34,8 +34,7 @@ class App extends Component {
     userInfo: {},
     appliedUser: [],
     jsProfile: [],
-    empPros: [],
-    token: null,
+    empPros: {},
     user_id: null,
     employer: null,
     token: TokenService.hasAuthToken()
@@ -64,18 +63,30 @@ class App extends Component {
     });
   };
 
+  createEmpProfile = (profile) => {
+    this.setState({
+      empPros: profile,
+    });
+  };
+
+  deleteEmpJob = (id) => {
+    console.log(id);
+    this.setState({
+      jobs: this.state.jobs.filter((job) => job.id !== id),
+    });
+  };
+
   updateApplications = (application) => {
     this.setState({
-      appliedUser: [...this.state.appliedUser, application]
-    })
-  }
+      appliedUser: [...this.state.appliedUser, application],
+    });
+  };
 
   updateGigs = (gigs) => {
     this.setState({
-      gigs
-    })
-  }
-
+      gigs,
+    });
+  };
 
   setUserId = (user_id, employer) => {
     this.setState({
@@ -92,10 +103,10 @@ class App extends Component {
       fetch(`${config.API_ENDPOINT}/empprofile/emp/${user_id}`),
     ])
       .then(([appRes, jobsRes, empProRes]) => {
-        if (!appRes.ok) return appRes.json().then((e) => Promise.reject(e));
-        if (!jobsRes.ok) return jobsRes.json().then((e) => Promise.reject(e));
-        if (!empProRes.ok)
-          return empProRes.json().then((e) => Promise.reject(e));
+        // if (!appRes.ok) return appRes.json().then((e) => Promise.reject(e));
+        // if (!jobsRes.ok) return jobsRes.json().then((e) => Promise.reject(e));
+        // if (!empProRes.ok)
+          // return empProRes.json().then((e) => Promise.reject(e));
         return Promise.all([appRes.json(), jobsRes.json(), empProRes.json()]);
       })
       .then(([applicants, jobs, empPros]) => {
@@ -150,7 +161,7 @@ class App extends Component {
       : { user_id: "" };
     this.setState({ userInfo: token });
     const { user_id, employer } = this.state.token;
-    
+
     if (employer) {
       this.getEmployerData(user_id);
     } else {
@@ -222,8 +233,10 @@ class App extends Component {
       setUserId: this.setUserId,
       clearContext: this.clearContext,
       createUserProfile: this.createUserProfile,
+      createEmpProfile: this.createEmpProfile,
       updateApplications: this.updateApplications,
-      updateGigs: this.updateGigs
+      updateGigs: this.updateGigs,
+      deleteEmpJob: this.deleteEmpJob,
     };
 
     return (
@@ -240,9 +253,11 @@ class App extends Component {
                 <Route exact path="/" component={LandingPg} />
               </section>
 
-              {/* Unprotected route */}
+              {/* Protected route */}
               <section className="create-profile">
-                <Route path="/crt-e-profile" component={CreateEmpPro} />
+                <PrivateRoute path="/crt-e-profile" component={NavMenuEmp} />
+                <PrivateRoute path="/crt-e-profile" component={CreateEmpPro} />
+
                 <PrivateRoute path="/crt-js-profile" component={NavMenu} />
                 <PrivateRoute
                   path="/crt-js-profile"

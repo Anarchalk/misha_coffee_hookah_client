@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import AppContext from "../AppContext";
+import TokenService from "../../services/token-service";
 import config from "../../config";
 import clapper from "../../images/clapper.jpg";
-import TokenService from "../../services/token-service";
 import "./jshome.css";
 
 export default class JsHome extends Component {
