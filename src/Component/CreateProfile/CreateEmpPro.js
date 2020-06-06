@@ -1,7 +1,10 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
 import AlgoliaPlaces from "algolia-places-react";
+// import TokenService from "../../services/token-service";
+// import AppContext from "../../Component/AppContext";
+import "../../AlgoliaPlaces.css";
 import config from "../../config";
+import './create-emp-profile.css'
 
 export default class CreateEmpPro extends Component {
   state = {
@@ -53,95 +56,124 @@ export default class CreateEmpPro extends Component {
   handleAddress = (suggestion) => {
     const { name, city, administrative, postcode } = suggestion;
     this.setState({
-      address: `${name}, ${city}, ${administrative} ${postcode}`,
+      location: `${name}, ${city}, ${administrative} ${postcode}`,
     });
   };
   render() {
     return (
       <>
         <h1>CREATE EMPLOYER PROFILE</h1>
+        <section className="create-emp-profile">
 
-        <form onSubmit={this.handleSubmit}>
-          <label>Company name: </label>
+          <form onSubmit={this.handleSubmit}>
+            <label className="label" htmlFor="name">
+              Company name{" "}
+            </label>
+            <input
+              onChange={this.handleChange}
+              type="text"
+              name="company_name"
+              id="name"
+              className="input"
+              value={this.state.company_name}
+              required
+            />
+            <br />
+            <label className="label" htmlFor="phone">
+              Phone:{" "}
+            </label>
+            <input
+              onChange={this.handleChange}
+              type="phone"
+              name="phone"
+              id="phone"
+              className="input"
+              value={this.state.tel}
+              required
+            />
+            <br />
+            <label className="label" htmlFor="fax">
+              Fax:{" "}
+            </label>
+            <input
+              onChange={this.handleChange}
+              type="fax"
+              name="fax"
+              id="fax"
+              className="input"
+              value={this.state.fax}
+              required
+            />
+            <br />
+            <label className="label" htmlFor="website">
+              Website:{" "}
+            </label>
+            <input
+              onChange={this.handleChange}
+              type="website"
+              name="website"
+              id="website"
+              className="input"
+              value={this.state.url}
+              required
+            />
+            <br />
+            <label className="label" htmlFor="email">
+              Email:{" "}
+            </label>
+            <input
+              onChange={this.handleChange}
+              type="email"
+              name="email"
+              id="email"
+              className="input"
+              value={this.state.email}
+              required
+            />
+            <br />
+            <label className="label" htmlFor="location">
+              Address:
+            </label>
+            <br />
+            <AlgoliaPlaces
+              id="location"
+              placeholder="Write an address here"
+              options={{
+                appId: config.APPID,
+                apiKey: config.SEARCH_KEY,
+                language: "en",
+                countries: ["us"],
+                type: "address",
+              }}
+              onChange={({ query, rawAnswer, suggestion, suggestionIndex }) =>
+                this.handleAddress(suggestion)
+              }
+            />
+            <br />
+            <label className="label" htmlFor="about_us">
+              About us:{" "}
+            </label>
+            <textarea
+              onChange={this.handleChange}
+              name="about_us"
+              id="about_us"
+              className="input"
+              value={this.state.about_us}
+            />
+            <br />
+            {/* <label className="label" htmlFor="logo">Logo: </label>
           <input
             onChange={this.handleChange}
-            type="text"
-            name="company_name"
-            value={this.state.company_name}
-            required
-          />
-          <br />
-          <label>Phone: </label>
-          <input
-            onChange={this.handleChange}
-            type="tel"
-            name="tel"
-            value={this.state.tel}
-            required
-          />
-          <br />
-          <label>Fax: </label>
-          <input
-            onChange={this.handleChange}
-            type="fax"
-            name="fax"
-            value={this.state.fax}
-            required
-          />
-          <br />
-          <label>Website: </label>
-          <input
-            onChange={this.handleChange}
-            type="url"
-            name="url"
-            value={this.state.url}
-            required
-          />
-          <br />
-          <label>Email: </label>
-          <input
-            onChange={this.handleChange}
-            type="email"
-            name="email"
-            value={this.state.email}
-            required
-          />
-          <br />
-          <label>Address:</label>
-          <br />
-          <AlgoliaPlaces
-            placeholder="Write an address here"
-            options={{
-              appId: config.APPID,
-              apiKey: config.SEARCH_KEY,
-              language: "en",
-              countries: ["us"],
-              type: "address",
-            }}
-            onChange={({ query, rawAnswer, suggestion, suggestionIndex }) =>
-              this.handleAddress(suggestion)
-            }
-          />
-          <br />
-          <label>About us: </label>
-          <textarea
-            onChange={this.handleChange}
-            name="about_us"
-            value={this.state.about_us}
-          />
-          <br />
-          <label>Logo: </label>
-          <input
-            onChange={this.handleChange}
-            type="file"
-            id="fileElem"
+            type="logo"
+            id="logo"
             multiple
             accept="image/*"
-          />
-          {/* <button id="fileSelect">Select file</button>         */}
-          <br />
-          <input type="submit" value="create" />
-        </form>
+          /> */}
+            {/* <button id="fileSelect">Select file</button>         */}
+            <br />
+            <input type="submit" value="create" />
+          </form>
+        </section>
       </>
     );
   }

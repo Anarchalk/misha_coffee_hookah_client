@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AppContext from "../../Component/AppContext";
+import {Link} from 'react-router-dom';
 import './empprofile.css'
 
 
@@ -22,6 +23,7 @@ export default class EmpProfile extends Component {
         <p>{empPros.phone}</p><br/>
         </div>
        <button id='editme'>Edit Profile</button>
+       <Link to='/crt-e-profile'>Create profile</Link>
       </section>
     );
   }
