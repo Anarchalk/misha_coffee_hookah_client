@@ -31,3 +31,31 @@ h1 {
     width: calc(100% - 200px); */
     cursor: pointer;
 }
+
+.create-emp-profile .input#phone {
+    padding: 10px;
+    border: 0;
+    box-shadow: 0 0 15px 4px #01fff0;
+}
+
+.create-emp-profile .input#fax {
+    padding: 10px;
+    border: 0;
+    box-shadow: 0 0 15px 4px #01fff0;
+}
+
+.create-emp-profile .input#website {
+    padding: 10px;
+    border: 0;
+    box-shadow: 0 0 15px 4px #01fff0;
+}
+.create-emp-profile .input#email {
+    padding: 10px;
+    border: 0;
+    box-shadow: 0 0 15px 4px #01fff0;
+}
+.create-emp-profile .textarea#about_us {
+    padding: 10px;
+    border: 0;
+    box-shadow: 0 0 15px 4px #01fff0;
+}

@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import AlgoliaPlaces from "algolia-places-react";
- import TokenService from "../../services/token-service";
- import AppContext from "../../Component/AppContext";
 import { Link } from "react-router-dom";
-import "../../AlgoliaPlaces.css";
+import AlgoliaPlaces from "algolia-places-react";
+import TokenService from "../../services/token-service";
+import AppContext from "../AppContext";
 import config from "../../config";
 import './create-emp-profile.css'
 
@@ -29,9 +28,9 @@ export default class CreateEmpPro extends Component {
 
   handleSubmit = (e) => {
     const token = TokenService.hasAuthToken()
-    ? TokenService.readJwtToken()
-    : { user_id: "" }
-const { user_id } = token
+                ? TokenService.readJwtToken()
+                : { user_id: "" }
+    const { user_id } = token
     e.preventDefault();
     fetch(`${config.API_ENDPOINT}/empprofile`, {
       method: "POST",
@@ -41,7 +40,7 @@ const { user_id } = token
       body: JSON.stringify({
         company_name: this.state.company_name,
         about_us: this.state.about_us,
-        logo: this.state.logo,
+        // logo: this.state.logo,
         email: this.state.email,
         phone: this.state.phone,
         location: this.state.location,
@@ -91,7 +90,7 @@ const { user_id } = token
             </label>
             <input
               onChange={this.handleChange}
-              type="phone"
+              type="tel"
               name="phone"
               id="phone"
               className="input"

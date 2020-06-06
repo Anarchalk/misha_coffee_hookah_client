@@ -7,6 +7,7 @@ import "./EmpDash.css";
 
 export default class EmpDash extends Component {
   static contextType = AppContext;
+
   deletePost = (id) => {
 
     fetch(`${config.API_ENDPOINT}/jobs/${id}`, {
@@ -45,9 +46,9 @@ export default class EmpDash extends Component {
                     Delete
                   </button>
                     <h4>{job.position}</h4>
+                    <p>{job.title}</p>
                     <p>{job.duration}</p>
                     <p>{job.location}</p>
-                    <p>{job.term}</p>
                     <p>{job.pay}</p>
                     <p>{job.description}</p>
                   </li>
