@@ -111,7 +111,7 @@ export default class Login extends Component {
             type="submit"
             value="login"
           />{" "}
-          <button
+          {/* <button
             style={{
               marginRight: "5px",
               border: "1px solid #fff",
@@ -128,7 +128,7 @@ export default class Login extends Component {
               {" "}
               sign up
             </Link>
-          </button>
+          </button> */}
         </form>
       </>
     );
