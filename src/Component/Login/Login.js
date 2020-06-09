@@ -76,7 +76,9 @@ export default class Login extends Component {
           <div role="alert">
             {error && <p style={{ color: "red" }}>{error}</p>}
           </div>
-          <label id='loginname'style={{ paddingRight: "6px" }}>Username </label>
+          <label id="loginname" style={{ paddingRight: "6px" }}>
+            Username{" "}
+          </label>
           <input
             onChange={this.handleChange}
             type="text"
@@ -86,7 +88,9 @@ export default class Login extends Component {
             required
           />
           <br />
-          <label id='loginpass'style={{ paddingRight: "10px" }}>Password </label>
+          <label id="loginpass" style={{ paddingRight: "10px" }}>
+            Password{" "}
+          </label>
           <input
             onChange={this.handleChange}
             type="text"
@@ -96,7 +100,7 @@ export default class Login extends Component {
             required
           />
           <br />
-          <input 
+          <input
             style={{
               marginRight: "10px",
               marginLeft: "4rem",
@@ -109,24 +113,6 @@ export default class Login extends Component {
             type="submit"
             value="login"
           />{" "}
-          {/* <button
-            style={{
-              marginRight: "5px",
-              border: "1px solid #fff",
-              padding: "5px",
-              color: "#fff",
-              marginTop: "10px",
-              backgroundColor: "#01fff0",
-            }}
-          >
-            <Link
-              style={{ textDecoration: "none", color: "#000" }}
-              to="/signup"
-            >
-              {" "}
-              sign up
-            </Link>
-          </button> */}
         </form>
       </>
     );
