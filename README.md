@@ -7,7 +7,7 @@
 
 ## LINK TO LIVE APP
 
-https://parent-connect-app.now.sh/
+https://gig24-app.now.sh/
 
 
 ***
@@ -20,6 +20,8 @@ https://parent-connect-app.now.sh/
 * Express 
 * PostgreSQL
 * SQL
+* Mocha
+* Chai
 
 
 ***
