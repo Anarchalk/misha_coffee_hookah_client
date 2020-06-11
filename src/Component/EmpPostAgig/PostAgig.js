@@ -51,9 +51,9 @@ export default class PostAgig extends Component {
   // }
 
   handleAddress = (suggestion) => {
-    const { city, administrative } = suggestion;
+    const { name, city, administrative, postcode } = suggestion;
     this.setState({
-      location: `${city}, ${administrative}`,
+      location: `${name || ''}, ${city || ''}, ${administrative || ''} ${postcode || ''}`,
     });
   };
 
@@ -163,9 +163,9 @@ export default class PostAgig extends Component {
               className="input"
               value={this.state.description}
             />
-            <label className="label" htmlFor="member">
+            <label id='guild' className="label" htmlFor="member">
               Is this Union/Guild job?:
-            </label>
+            </label>{' '}
             <label style={{ color: "white" }}>Yes</label>
             <input
               onChange={this.handleChange}
@@ -220,7 +220,8 @@ export default class PostAgig extends Component {
             <select
               className="input"
               name="pay"
-              id="input"
+              type='input'
+              id="pay"
               onChange={(e) => this.handleChange(e)}
             >
               <option>--</option>
@@ -268,7 +269,7 @@ export default class PostAgig extends Component {
           <input type="submit" value="POST" />{" "}
         </form>
         <br/>
-          <Link to='/e-dashboard'><button>CANCEL</button></Link>
+          <Link to='/e-dashboard'><button id='cancel' >CANCEL</button></Link>
       </section>
     );
   }

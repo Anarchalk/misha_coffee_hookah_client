@@ -39,3 +39,8 @@ ul {
 .App-landing {
   background-color: #0e0d0d;
 }
+
+p {
+  line-height: 2rem;
+}
+

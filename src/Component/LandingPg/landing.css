@@ -6,19 +6,19 @@
 
 #content {
   background: rgb(0, 0, 0); /* Fallback color */
-  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  background: rgba(0, 0, 0, 0.6); /* Black background with 0.5 opacity */
   color: #f1f1f1;
   padding: 20px;
 }
 
 #content> p {
-  font-size:1.3rem;
+  font-size:1rem;
   line-height: 1.6rem;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 .glow-on-hover {
-  width: 140px;
+  width: 128px;
   height: 70px;
   border: none;
   outline: none;
@@ -81,7 +81,7 @@
 
 @media screen and (min-width: 768px) {
   .postfind-link {
-     padding:10px;
+     padding:40px 10px;
   }
   .glow-on-hover {
     width: 200px;
@@ -98,8 +98,6 @@
  }
  
  @media screen and (min-width: 1024px){
-     .event-list{
-         max-width: 50%;
-     }
+     
     
  }

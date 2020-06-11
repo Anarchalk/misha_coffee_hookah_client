@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import AlgoliaPlaces from "algolia-places-react";
-import TokenService from "../../services/token-service";
-import AppContext from "../AppContext";
 import config from "../../config";
-import './create-emp-profile.css'
+import AppContext from "../../Component/AppContext";
+import "./create-emp-profile.css";
+import "../../AlgoliaPlaces.css";
 
-export default class CreateEmpPro extends Component {
+export default class EditEmpPro extends Component {
   static contextType = AppContext;
 
   state = {
@@ -18,6 +17,38 @@ export default class CreateEmpPro extends Component {
     location: "",
     fax: "",
     website: "",
+    id: null,
+  };
+
+  componentDidMount() {
+    const empPros = this.props.location.state;
+
+    this.setState(
+      {
+        company_name: empPros.company_name,
+        about_us: empPros.about_us,
+        // logo: this.state.logo,
+        email: empPros.email,
+        phone: empPros.phone,
+        location: empPros.location,
+        fax: empPros.fax,
+        website: empPros.website,
+        id: empPros.id,
+      },
+      () => {
+        const location = document.querySelector("#location");
+        console.log(location.innerHTML);
+        console.log(this.state.location);
+        location.value = this.state.location;
+      }
+    );
+  }
+
+  resetLocation = (e) => {
+    e.preventDefault();
+    const location = document.querySelector("#location");
+    console.log(location);
+    location.value = "Hello";
   };
 
   handleChange = (e) => {
@@ -26,14 +57,22 @@ export default class CreateEmpPro extends Component {
     });
   };
 
+  handleAddress = (suggestion) => {
+    const { name, city, administrative, postcode } = suggestion;
+    this.setState({
+      location: `${name || ""}, ${city || ""}, ${administrative || ""} ${
+        postcode || ""
+      }`,
+    });
+  };
+
   handleSubmit = (e) => {
-    const token = TokenService.hasAuthToken()
-                ? TokenService.readJwtToken()
-                : { user_id: "" }
-    const { user_id } = token
+    // const token = TokenService.hasAuthToken()
+    //   ? TokenService.readJwtToken()
+    //   : { user_id: "" };
     e.preventDefault();
-    fetch(`${config.API_ENDPOINT}/empprofile`, {
-      method: "POST",
+    fetch(`${config.API_ENDPOINT}/empprofile/${this.state.id}`, {
+      method: "PATCH",
       headers: {
         "content-type": "application/json",
       },
@@ -46,31 +85,27 @@ export default class CreateEmpPro extends Component {
         location: this.state.location,
         fax: this.state.fax,
         website: this.state.website,
-        user_id: user_id,
       }),
     })
       .then((res) => {
         if (!res.ok) return res.json().then((e) => Promise.reject(e));
         return res.json();
       })
-      .then((profile) => {
-        this.context.createEmpProfile(profile)
+      .then((empPro) => {
+        console.log(empPro);
+        this.context.createEmpProfile(empPro);
         this.props.history.push("/empprofile");
+      })
+      .catch((error) => {
+        console.log({ error });
       });
   };
 
-  handleAddress = (suggestion) => {
-    const { name, city, administrative, postcode } = suggestion;
-    this.setState({
-      location: `${name || ''}, ${city || ''}, ${administrative || ''} ${postcode || ''}`,
-    });
-  };
   render() {
     return (
       <>
-        <h1 id='createemp-pro'>CREATE EMPLOYER PROFILE</h1>
+        <h1>EDIT EMPLOYER PROFILE</h1>
         <section className="create-emp-profile">
-
           <form onSubmit={this.handleSubmit}>
             <label className="label" htmlFor="name">
               Company name{" "}
@@ -141,7 +176,6 @@ export default class CreateEmpPro extends Component {
               Address:
             </label>
             <br />
-            <div id='address'>
             <AlgoliaPlaces
               id="location"
               placeholder="Write an address here"
@@ -156,7 +190,6 @@ export default class CreateEmpPro extends Component {
                 this.handleAddress(suggestion)
               }
             />
-            </div>
             <br />
             <label className="label" htmlFor="about_us">
               About us:{" "}
@@ -165,7 +198,7 @@ export default class CreateEmpPro extends Component {
               onChange={this.handleChange}
               name="about_us"
               id="about_us"
-              className="textarea"
+              className="input"
               value={this.state.about_us}
             />
             <br />
@@ -179,14 +212,13 @@ export default class CreateEmpPro extends Component {
           /> */}
             {/* <button id="fileSelect">Select file</button>         */}
             <br />
-            <input type="submit" value="Create" />
-          <Link to="/empprofile">
-            <button>Cancel</button>
-          </Link>
+            <input id='updatepro'
+              type="submit"
+              value="update"
+            />
           </form>
         </section>
-        </>
-    
+      </>
     );
   }
 }

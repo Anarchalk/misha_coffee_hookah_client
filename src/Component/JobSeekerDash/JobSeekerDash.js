@@ -18,19 +18,19 @@ export default class JobSeekerDash extends Component {
           backgroundSize: "cover",
         }}
       >
-        <h2 id="pending">Pending gigs</h2>
+        <h1 id="pending">PENDING GIGS</h1>
         <ul className="dash">
           {this.context.appliedUser.map((user, idx) => (
             <li key={idx}>
-              <p>{user.position}</p>
+              <h4 style={{textTransform:'uppercase'}}>{user.position}</h4>
               <p>{user.title}</p>
-              <p>{user.description}</p>
-              <p>{user.location}</p>
-              <p>{user.pay}</p>
-              <p>{user.duration}</p>
+              <p>DESCRIPTION: {user.description}</p>
+              <p>LOCATION: {user.location}</p>
+              <p>TERM: {user.pay}</p>
+              <p>DURATION: {user.duration}</p>
               <p>{user.unit}</p>
-              <p>{user.requirements}</p>
-              <p>{user.member ? "Yes" : "No"}</p>
+              <p>REQUIREMENTS: {user.requirements}</p>
+              <p>Union/ Guild job: {user.member ? "Yes" : "No"}</p>
             </li>
           ))}
         </ul>

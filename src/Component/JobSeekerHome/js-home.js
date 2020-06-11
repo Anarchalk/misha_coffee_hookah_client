@@ -72,14 +72,14 @@ export default class JsHome extends Component {
           backgroundSize: "cover",
         }}
       >
-        <h1 id='open'>Open gigs</h1>
+        <h1 id='open'>OPEN GIGS</h1>
         <ul className ='gig'>
           {this.context.gigs.map((gig, idx) => (
             <li key={idx}>
               <div >
                 <h3 id ='position'>{gig.position}</h3>
-                <p>Duration: {gig.title}</p>
-                <p>Location: {gig.location}</p>
+                <p>DURATION: {gig.title}</p>
+                <p>LOCATION: {gig.location}</p>
                 <button onClick={() => this.handleClick(idx)}>details</button>
                 <button className='glow-on'
                     onClick={() => this.handleApply(gig.id)}
@@ -89,9 +89,9 @@ export default class JsHome extends Component {
                 </button>
                 {this.state.show[idx] && (
                   <section>
-                    <p>Project Details: {gig.description}</p>
-                    <p>Duration: {gig.duration}</p>
-                    <p>Pay: {gig.pay}</p>
+                    <p>DESCRIPTION: {gig.description}</p>
+                    <p>DURATION: {gig.duration}</p>
+                    <p>TERM: {gig.pay}</p>
                   </section>
                 )}
               </div>

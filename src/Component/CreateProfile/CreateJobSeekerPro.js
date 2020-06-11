@@ -33,14 +33,9 @@ export default class CreateJobSeekerPro extends Component {
 
   handleAddress = (suggestion) => {
     const { name, city, administrative, postcode } = suggestion;
-    this.setState(
-      {
-        location: `${name || ""}, ${city || ""}, ${administrative || ""} ${
-          postcode || ""
-        }`,
-      },
-      () => console.log(this.state.location)
-    );
+    this.setState({
+      location: `${name || ''}, ${city || ''}, ${administrative || ''} ${postcode || ''}`,
+    });
   };
 
   handleSubmit = (e) => {
@@ -201,7 +196,7 @@ export default class CreateJobSeekerPro extends Component {
           {/* <input type="file" id="fileElem" multiple accept="image/*" /> */}
           <br />
           {/* <button id="fileSelect">Select file</button>         */}
-          <input className="submit" type="submit" value="create" />
+          <input className="submit" type="submit" value="CREATE" />
         </form>
       </section>
     );

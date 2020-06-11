@@ -54,7 +54,7 @@ export default class Signup extends Component {
     const { error } = this.state;
     return (
       <>
-        <h3>Sign up</h3>
+        <h3 style={{color:'white'}}>Sign up</h3>
         <form
           id="signup-form"
             onSubmit={this.handleSubmit}

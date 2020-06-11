@@ -101,15 +101,6 @@ export default class Login extends Component {
           />
           <br />
           <input
-            style={{
-              marginRight: "10px",
-              marginLeft: "4rem",
-              border: "1px solid #fff",
-              padding: "5px",
-              color: "#000",
-              marginTop: "10px",
-              backgroundColor: "#01fff0",
-            }}
             type="submit"
             value="login"
           />{" "}

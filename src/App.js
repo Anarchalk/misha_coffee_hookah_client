@@ -21,6 +21,7 @@ import TokenService from "./services/token-service";
 import AuthApiService from "./services/auth-api-service";
 import IdleService from "./services/idle-service";
 import EmpProfile from "./Component/EmpProfile/EmpProfile";
+import EditEmpPro from './Component/CreateProfile/EditEmpPro'
 import config from "./config.js";
 import "./App.css";
 
@@ -103,10 +104,6 @@ class App extends Component {
       fetch(`${config.API_ENDPOINT}/empprofile/emp/${user_id}`),
     ])
       .then(([appRes, jobsRes, empProRes]) => {
-        // if (!appRes.ok) return appRes.json().then((e) => Promise.reject(e));
-        // if (!jobsRes.ok) return jobsRes.json().then((e) => Promise.reject(e));
-        // if (!empProRes.ok)
-          // return empProRes.json().then((e) => Promise.reject(e));
         return Promise.all([appRes.json(), jobsRes.json(), empProRes.json()]);
       })
       .then(([applicants, jobs, empPros]) => {
@@ -118,7 +115,6 @@ class App extends Component {
   };
 
   getJobSeekerData = (user_id) => {
-    // const { user_id } = this.state.token;
     if (!user_id) return;
     Promise.all([
       fetch(`${config.API_ENDPOINT}/jobs/gigs/${user_id}`),
@@ -126,9 +122,6 @@ class App extends Component {
       fetch(`${config.API_ENDPOINT}/userprofile/user/${user_id}`),
     ])
       .then(([gigRes, appliedUserRes, userProRes]) => {
-        // if (!gigRes.ok) return gigRes.json().then((e) => Promise.reject(e));
-        // if (!appliedUserRes.ok) return appliedUserRes.json().then((e) => Promise.reject(e));
-        // if (!userProRes.ok) return userProRes.json().then((e) => Promise.reject(e));
         return Promise.all([
           gigRes.json(),
           appliedUserRes.json(),
@@ -257,7 +250,7 @@ class App extends Component {
               <section className="create-profile">
                 <PrivateRoute path="/crt-e-profile" component={NavMenuEmp} />
                 <PrivateRoute path="/crt-e-profile" component={CreateEmpPro} />
-
+                <PrivateRoute path="/edit-e-profile" component={EditEmpPro} />
                 <PrivateRoute path="/crt-js-profile" component={NavMenu} />
                 <PrivateRoute
                   path="/crt-js-profile"

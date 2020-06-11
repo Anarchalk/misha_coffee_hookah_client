@@ -21,7 +21,7 @@ export default class JobSeekerPro extends Component {
           backgroundPosition: "center",
         }}
       >
-        <h1 id="header">My profile</h1>
+        <h1 id="header">MY PROFILE</h1>
         <article className="mypro">
           <div id="who">
             <h3 style={{fontWeight:'bold', textTransform:'capitalize'}}>{jsProfile.name}</h3>

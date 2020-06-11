@@ -1,29 +1,28 @@
 h1 {
     font-family: 'Orbitron', sans-serif;
     color:#01fff0;
+    font-size: 1rem;
 }
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
 
 .create-emp-profile form {
-    overflow: hidden;
-    width: 600px;
+    /* overflow: hidden; */
     margin: 0 auto;
 }
 
 .create-emp-profile .label {
-    float: left;
+    display: block;
     width: 150px;
-    padding-right: 24px;
     color: white;
     margin-bottom: 20px;
     text-align: right;
 }
 
 .create-emp-profile .input {
-    float: left;
-    width: calc(100% - 200px);
+    width: calc(75%);
     margin-bottom: 20px;
+    
 }
  
 .create-emp-profile .submit {
@@ -54,8 +53,52 @@ h1 {
     border: 0;
     box-shadow: 0 0 15px 4px #01fff0;
 }
-.create-emp-profile .textarea#about_us {
+
+textarea#about_us {
     padding: 10px;
     border: 0;
     box-shadow: 0 0 15px 4px #01fff0;
 }
+
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    span.algolia-places {
+        margin-left: 160px;
+        width: 77%;
+        margin-bottom: 10px;
+    }
+    .create-emp-profile .label {
+        float: left;
+        width: 150px;
+        padding-right: 24px;
+        color: white;
+        margin-bottom: -7px;
+        text-align: right;
+    }
+
+    .create-emp-profile form {
+        width: 600px;
+    }
+    
+    .create-emp-profile .input {
+        float: left;
+        width: calc(100% - 200px);
+        margin-bottom: 30px;
+    }
+    input#updatepro {
+        margin: 0 auto;
+    }
+
+  } 
+  
+  @media screen and (min-width: 1024px){
+    span.algolia-places {
+        margin-left: 160px;
+        width: 79;
+    }
+    .create-emp-profile form {
+        width: 700px;
+    }
+  }

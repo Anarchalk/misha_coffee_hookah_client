@@ -12,7 +12,7 @@ export default class EmpProfile extends Component {
       const {empPros} = this.context
     return (
       <>
-      {!empPros.error ?
+    
         <section className='profile'>
           <div id='empprofile'>
           <p>{empPros.company_name}</p>
@@ -22,13 +22,20 @@ export default class EmpProfile extends Component {
           <p>{empPros.website}</p>
           <p>{empPros.phone}</p><br/>
           </div>
+          {empPros ?
+            <Link to={{
+              pathname : '/edit-e-profile', 
+              state: empPros
+            }}>
          <button id='editme'>Edit Profile</button>
-        </section>
+         </Link>
         :
         <Link to="/crt-e-profile">
           <button id='editme'>Create Profile</button>
         </Link>
-      }
+          }
+          </section>
+      
       </>
     );
   }

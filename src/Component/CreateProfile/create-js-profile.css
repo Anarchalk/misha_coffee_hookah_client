@@ -4,30 +4,51 @@ h1 {
 }
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
-
-.create-js-profile form {
-    overflow: hidden;
-    width: 600px;
-    margin: 0 auto;
-}
-
 .create-js-profile .label {
-    float: left;
-    width: 150px;
     padding-right: 24px;
     color: white;
+    display: block;
     margin-bottom: 20px;
-    text-align: right;
 }
 
 .create-js-profile .input {
-    float: left;
-    width: calc(100% - 200px);
+    width: calc(70%);
     margin-bottom: 20px;
 }
- 
-.create-js-profile .submit {
-    /* float: right;
-    width: calc(100% - 200px); */
-    cursor: pointer;
+
+textarea#about_me,
+input#phone,
+input#email,
+textarea#skill {
+    padding:10px;
+    border:0;
+    box-shadow: 0 0 15px 4px rgb(1,255,240);
+}
+
+
+/*Tablet view*/
+@media screen and (min-width: 768px) {
+
+    .create-js-profile form {
+        width: 600px;
+        margin: 0 auto;
+    }
+    
+    .create-js-profile .label {
+        float: left;
+        width: 150px;
+       text-align: right;
+    }
+    
+    .create-js-profile .input {
+        float: left;
+        width: calc(100% - 200px);
+        margin-bottom: 20px;
+    }
+     
+    .create-js-profile .submit {
+        /* float: right;
+        width: calc(100% - 200px); */
+        cursor: pointer;
+    }
 }
