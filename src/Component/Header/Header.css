@@ -2,23 +2,27 @@
 margin: 15px 0;
 }
 
-.logo {
-    text-decoration: none;
-    color: #fff;
+#neon{
+  background-color: rgb(10, 10, 10); 
+}
+
+#headerlogin {
+  background-color:rgb(10, 10, 10);
+  padding: 10px;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .log-sign-links {
   text-decoration: none;
-  color: rgb(253, 24, 165);
+  color: rgb(245, 8, 193);
   cursor: pointer;
-}
-
-.header-span {
-  display: block;
+  font-size: 1rem;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .neon {
   color: #fff;
+  font-size: 2rem;
   text-shadow:
     0 0 5px #fff,
     0 0 10px #fff,
@@ -28,4 +32,21 @@ margin: 15px 0;
     0 0 90px #0ff,
     0 0 100px #0ff,
     0 0 150px #0ff;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+@media screen and (min-width: 768px) {
+  .neon {
+    font-size: 3rem;
+  }
+
+  .log-sign-links {
+    font-size: 1.2rem;
+  }
+
+  #headerlogin {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
 }

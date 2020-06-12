@@ -2,41 +2,44 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import TokenService from "../../services/token-service";
 import IdleService from "../../services/idle-service";
-import AppContext from "../AppContext"
+import AppContext from "../AppContext";
 import "./Header.css";
 
-
 export default class Header extends Component {
-  static contextType = AppContext
+  static contextType = AppContext;
 
   handleLogoutClick = () => {
-    console.log('logging out...')
+    console.log("logging out...");
     TokenService.clearAuthToken();
     TokenService.clearCallbackBeforeExpiry();
     IdleService.unRegisterIdleResets();
-    this.context.clearContext()
-    const token = TokenService.hasAuthToken() ? TokenService.readJwtToken() : {user_id:''}
-    this.context.setUserId(token.user_id, token.employer)
+    this.context.clearContext();
+    const token = TokenService.hasAuthToken()
+      ? TokenService.readJwtToken()
+      : { user_id: "" };
+    this.context.setUserId(token.user_id, token.employer);
   };
 
   renderLogoutLink() {
     return (
       <div>
-        <Link onClick={this.handleLogoutClick} to="/" style={{textDecoration:'none', color:'#fff'}}>
+        <Link
+          onClick={this.handleLogoutClick}
+          to="/"
+          style={{ textDecoration: "none", color: "#fff" }}
+        >
           Logout
         </Link>
       </div>
     );
   }
 
-
-  
   renderLoginLink() {
     return (
       <>
-       <Link
+        <Link
           className="log-sign-links"
-          style={{ marginRight: "5px", fontWeight:'bolder', color:'#orange' }}
+          style={{ marginRight: "5px", fontWeight: "bolder", color: "#orange" }}
           to="/login"
         >
           Log in
@@ -48,26 +51,26 @@ export default class Header extends Component {
         >
           Sign up
         </Link>
-       </>
+      </>
     );
   }
 
   render() {
     return (
       <>
-      <nav>
-          <h1 className='neon' 
-            style={{textDecoration:'none', color:'#fff', fontSize:'34px'}}>
+        <div id="neon">
+          <h1 className="neon" style={{ textDecoration: "none" }}>
             GIG 24
           </h1>
-        {' '}
-        <span className='header-span'>
-        {TokenService.hasAuthToken()
-          ? this.renderLogoutLink()
-          : this.renderLoginLink()}
-        </span>
-      </nav>
-    </>
+        </div>{" "}
+        <div id="headerlogin">
+          <span className="header-span">
+            {TokenService.hasAuthToken()
+              ? this.renderLogoutLink()
+              : this.renderLoginLink()}
+          </span>
+        </div>
+      </>
     );
   }
 }

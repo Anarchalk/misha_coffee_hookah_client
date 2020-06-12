@@ -21,7 +21,7 @@ import TokenService from "./services/token-service";
 import AuthApiService from "./services/auth-api-service";
 import IdleService from "./services/idle-service";
 import EmpProfile from "./Component/EmpProfile/EmpProfile";
-import EditEmpPro from './Component/CreateProfile/EditEmpPro'
+import EditEmpPro from "./Component/CreateProfile/EditEmpPro";
 import config from "./config.js";
 import "./App.css";
 
@@ -237,9 +237,8 @@ class App extends Component {
         <AppContext.Provider value={value}>
           <>
             <div className="App">
-              <header className="App-header">
-                <Route path="/" component={Header} />
-              </header>
+              
+              <Route path="/" component={Header} />
 
               {/* Unprotected route */}
               <section className="App-landing">

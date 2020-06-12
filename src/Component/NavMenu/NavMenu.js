@@ -16,7 +16,7 @@ export default class NavMenu extends Component {
   render() {
     const { open } = this.state;
     return (
-      <nav className="navigation">
+      <nav role='navigation' className='navM'>
         <button className="hamburger" onClick={this.toggle}>
           |||
         </button>

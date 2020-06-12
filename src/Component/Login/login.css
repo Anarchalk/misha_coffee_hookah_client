@@ -10,7 +10,7 @@
     padding-top:20px;
 }
 
- #loginname, #loginpass {
+ #lgname, #loginpass {
     line-height: 45px;
     display: block;
     color: #01fff0;
@@ -25,7 +25,7 @@
  }
        
  @media screen and (min-width: 768px) {
-    #loginname,
+    #lgname,
     #loginpass {
        display: unset;
     }
@@ -33,10 +33,8 @@
     input[type="submit"] {
         margin-right: -78px;
     }
+    
   
   } 
 
   
-  @media screen and (min-width: 1024px){
-  
-  }

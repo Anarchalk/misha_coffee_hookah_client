@@ -5,7 +5,7 @@ import AppContext from "../AppContext";
 import TokenService from "../../services/token-service";
 import config from "../../config";
 import "../../AlgoliaPlaces.css";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import "./postgig.css";
 export default class PostAgig extends Component {
   static contextType = AppContext;
@@ -21,20 +21,20 @@ export default class PostAgig extends Component {
     //start_day: new Date(),
     pay: "",
     duration: "",
-    unit:''
+    unit: "",
   };
 
   handleChange = (e) => {
-    let value
-    if(e.target.value === 'yes'){
-      value = true
-    } else if(e.target.value === 'no'){
-      value = false
+    let value;
+    if (e.target.value === "yes") {
+      value = true;
+    } else if (e.target.value === "no") {
+      value = false;
     } else {
       value = e.target.value;
     }
     this.setState({
-      [e.target.name]: value
+      [e.target.name]: value,
     });
   };
 
@@ -53,15 +53,17 @@ export default class PostAgig extends Component {
   handleAddress = (suggestion) => {
     const { name, city, administrative, postcode } = suggestion;
     this.setState({
-      location: `${name || ''}, ${city || ''}, ${administrative || ''} ${postcode || ''}`,
+      location: `${name || ""}, ${city || ""}, ${administrative || ""} ${
+        postcode || ""
+      }`,
     });
   };
 
   handleSubmit = (e) => {
     const token = TokenService.hasAuthToken()
-    ? TokenService.readJwtToken()
-    : { user_id: "" }
-    const {user_id} = token
+      ? TokenService.readJwtToken()
+      : { user_id: "" };
+    const { user_id } = token;
     e.preventDefault();
 
     fetch(`${config.API_ENDPOINT}/jobs`, {
@@ -69,7 +71,7 @@ export default class PostAgig extends Component {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify( {
+      body: JSON.stringify({
         position: this.state.position,
         title: this.state.title,
         type: this.state.type,
@@ -80,8 +82,8 @@ export default class PostAgig extends Component {
         pay: this.state.pay,
         //start_day: new Date(),
         duration: this.state.duration,
-        unit:this.state.unit,
-        user_id
+        unit: this.state.unit,
+        user_id,
       }),
     })
       .then((res) => {
@@ -163,16 +165,16 @@ export default class PostAgig extends Component {
               className="input"
               value={this.state.description}
             />
-            <label id='guild' className="label" htmlFor="member">
-              Is this Union/Guild job?:
-            </label>{' '}
+            <label id="guild" className="label" htmlFor="member">
+              Union/Guild job?:
+            </label>{" "}
             <label style={{ color: "white" }}>Yes</label>
             <input
               onChange={this.handleChange}
               type="radio"
               name="member"
               id="member"
-              value='yes'
+              value="yes"
             />
             <label style={{ color: "white" }}>No</label>
             <input
@@ -180,7 +182,7 @@ export default class PostAgig extends Component {
               type="radio"
               name="member"
               id="member"
-              value='no'
+              value="no"
             />
           </fieldset>
           <br />
@@ -220,7 +222,7 @@ export default class PostAgig extends Component {
             <select
               className="input"
               name="pay"
-              type='input'
+              type="input"
               id="pay"
               onChange={(e) => this.handleChange(e)}
             >
@@ -242,34 +244,45 @@ export default class PostAgig extends Component {
               value={this.state.duration}
             />
             <br />
-            <label style={{ color: "white" }}>Day(s)</label>
+            <label htmlFor='unit' style={{ color: "white" }}>
+              Day(s)
+            </label>
             <input
               onChange={this.handleChange}
               type="radio"
+              id="unit"
               name="unit"
-              value='day'
+              value="day"
             />{" "}
-            <label style={{ color: "white" }}>Week(s)</label>
+            <label htmlFor='unit'  style={{ color: "white" }}>
+              Week(s)
+            </label>
             <input
               onChange={this.handleChange}
               type="radio"
+              id="unit"
               name="unit"
-              value='week'
+              value="week"
             />
-            <label style={{ color: "white" }}>Month(s)</label>
+            <label htmlFor='unit'  style={{ color: "white" }}>
+              Month(s)
+            </label>
             <input
               onChange={this.handleChange}
               type="radio"
+              id="unit"
               name="unit"
-              value='month'
+              value="month"
             />
             <br />
           </fieldset>
           <br />
           <input type="submit" value="POST" />{" "}
         </form>
-        <br/>
-          <Link to='/e-dashboard'><button id='cancel' >CANCEL</button></Link>
+        <br />
+        <Link to="/e-dashboard">
+          <button id="cancel">CANCEL</button>
+        </Link>
       </section>
     );
   }

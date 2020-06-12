@@ -77,7 +77,7 @@ export default class JsHome extends Component {
           {this.context.gigs.map((gig, idx) => (
             <li key={idx}>
               <div >
-                <h3 id ='position'>{gig.position}</h3>
+                <h2 id ='position'>{gig.position}</h2>
                 <p>DURATION: {gig.title}</p>
                 <p>LOCATION: {gig.location}</p>
                 <button onClick={() => this.handleClick(idx)}>details</button>

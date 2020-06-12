@@ -67,7 +67,7 @@ export default class Login extends Component {
         <p id="demo">Employer Demo password: sam</p>
         <p id="demo">Job seeker Demo username: dunder</p>
         <p id="demo">Job seeker Demo password: password</p>
-        <h3 id="log">Log in</h3>
+        <h2 id="log">Log in</h2>
         <form
           id="form"
           style={{ lineHeight: " 45px" }}
@@ -76,24 +76,26 @@ export default class Login extends Component {
           <div role="alert">
             {error && <p style={{ color: "red" }}>{error}</p>}
           </div>
-          <label id="loginname" style={{ paddingRight: "6px" }}>
+          <label htmlFor='loginname' id="lgname" style={{ paddingRight: "6px" }}>
             Username{" "}
           </label>
           <input
             onChange={this.handleChange}
             type="text"
             name="username"
+            id='loginname'
             placeholder="username"
             value={this.state.username}
             required
           />
           <br />
-          <label id="loginpass" style={{ paddingRight: "10px" }}>
+          <label htmlFor='login-pword' id="loginpass" style={{ paddingRight: "10px" }}>
             Password{" "}
           </label>
           <input
             onChange={this.handleChange}
             type="text"
+            id='login-pword'
             name="password"
             placeholder="username"
             value={this.state.password}
