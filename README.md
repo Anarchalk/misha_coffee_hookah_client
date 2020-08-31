@@ -1,14 +1,12 @@
-# GIG 24 App
+# Misha 
 
- The GIG 24 is the one stop shop for Production Assistant and film production jobs. Search for gigs and submit your resume today!
- There are private routes for job seekers and employers to create and edit profiles. Employers can post, delete gigs and view applicants  information. Job seekers can apply and see details of the open gigs as well as keep in track of applied jobs.   
-
+Coffee shop and Hookah Lounge
 
 * * *
 
 ## LINK TO LIVE APP
 
-https://gig24-app.now.sh/
+
 
 
 ***
@@ -48,4 +46,4 @@ https://gig24-app.now.sh/
 
 ## DOCUMENTATION
 You can find detailed development documentation from the link below:
-https://gist.github.com/Anarchalk/450fdadd3d1daa9a4fa7b28672425824
+
