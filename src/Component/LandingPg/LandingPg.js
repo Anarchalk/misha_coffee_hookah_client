@@ -36,7 +36,7 @@ export default class LandingPg extends Component {
         <section id="section-a" className="grid">
           <article className="content-wrap">
           <Slideshow slides={slides} />
-            <h1 className="content-title">Misha Coffee</h1>
+            <h1 className="content-title">MISHA COFFEE</h1>
             <article className="content-text">
               <p>
                 Lorem ipsum dolor sit amet, te mel euripidis expetendis, mea ne
@@ -50,6 +50,7 @@ export default class LandingPg extends Component {
             </article>
           </article>
         </section>
+
         {/* section b */}
         <section id="section-b" className="grid">
           <ul>

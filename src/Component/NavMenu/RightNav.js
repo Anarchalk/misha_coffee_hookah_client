@@ -5,6 +5,7 @@ const Ul = styled.ul`
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
+  align-items: flex-start;
   li {
     padding: 10px 20px;
   }
