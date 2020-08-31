@@ -36,4 +36,3 @@ Coffee shop and Hookah Lounge
 
 ## DOCUMENTATION
 You can find detailed development documentation from the link below:
-

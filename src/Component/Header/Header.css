@@ -1,53 +1,20 @@
-.header-span{
-margin: 15px 0;
+#header {
+  background: #ffffff;
+  color: #212b36;
 }
 
-#neon{
-  background-color: rgb(10, 10, 10); 
-  font-family: 'Orbitron', sans-serif;
+#header #logo {
+  position: relative;
+  width: 15%;
+  height: auto;
+  padding: 1em 2em;
 }
 
-#headerlogin {
-  background-color:rgb(10, 10, 10);
-  padding: 10px;
-  font-family: 'Orbitron', sans-serif;
-}
 
-.log-sign-links {
-  text-decoration: none;
-  color: rgb(245, 8, 193);
-  cursor: pointer;
-  font-size: 1rem;
-  font-family: 'Orbitron', sans-serif;
-}
 
-.neon {
-  color: #fff;
-  font-size: 2rem;
-  text-shadow:
-    0 0 5px #fff,
-    0 0 10px #fff,
-    0 0 20px #fff,
-    0 0 40px #0ff,
-    0 0 80px #0ff,
-    0 0 90px #0ff,
-    0 0 100px #0ff,
-    0 0 150px #0ff;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
-
-@media screen and (min-width: 768px) {
-  .neon {
-    font-size: 3rem;
+ @media screen and (min-width: 700px) {
+  #header #logo {
+    text-align: center;
+    width: 15%;
   }
-
-  .log-sign-links {
-    font-size: 1.2rem;
-  }
-
-  #headerlogin {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-}
+} 

@@ -1,76 +1,18 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import TokenService from "../../services/token-service";
-import IdleService from "../../services/idle-service";
-import AppContext from "../AppContext";
+import logo from '../../images/logo.jpg';
+
 import "./Header.css";
 
-export default class Header extends Component {
-  static contextType = AppContext;
+export default function Header () {
 
-  handleLogoutClick = () => {
-    console.log("logging out...");
-    TokenService.clearAuthToken();
-    TokenService.clearCallbackBeforeExpiry();
-    IdleService.unRegisterIdleResets();
-    this.context.clearContext();
-    const token = TokenService.hasAuthToken()
-      ? TokenService.readJwtToken()
-      : { user_id: "" };
-    this.context.setUserId(token.user_id, token.employer);
-  };
-
-  renderLogoutLink() {
-    return (
-      <div>
-        <Link
-          onClick={this.handleLogoutClick}
-          to="/"
-          style={{ textDecoration: "none", color: "#fff" }}
-        >
-          Logout
-        </Link>
-      </div>
-    );
-  }
-
-  renderLoginLink() {
-    return (
+  return (
       <>
-        <Link
-          className="log-sign-links"
-          style={{ marginRight: "5px", fontWeight: "bolder", color: "#orange" }}
-          to="/login"
-        >
-          Log in
-        </Link>{" "}
-        <Link
-          className="log-sign-links"
-          style={{ marginLeft: "5px" }}
-          to="/signup"
-        >
-          Sign up
-        </Link>
+        <header id= "header" className='grid'>
+          <article className="content-wrap">
+            <Link to="/home"><img id='logo' src={logo} alt="logo of a bear holding a coffee"/></Link>
+          </article>
+        </header>
       </>
     );
-  }
-
-  render() {
-    return (
-      <>
-        <div id="neon">
-          <h1 className="neon" style={{ textDecoration: "none" }}>
-            GIG 24
-          </h1>
-        </div>{" "}
-        <div id="headerlogin">
-          <span className="header-span">
-            {TokenService.hasAuthToken()
-              ? this.renderLogoutLink()
-              : this.renderLoginLink()}
-          </span>
-        </div>
-      </>
-    );
-  }
 }
