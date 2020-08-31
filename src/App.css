@@ -1,46 +1,60 @@
-.App {
-  text-align: center;  
-  height: 100%;
-  display: flex;
-  flex-direction: column;   
-  background-color: #1A1A1A; 
-  font-family: 'Open Sans', sans-serif;
- }
 
-.App-header {
-  top: 0px;
-  transition: top 0s ease 0s, background-color 400ms ease-in-out 0s;
-  transition: top .4s ease;
-  background-color:#0e0d0d;
-  box-sizing: content-box;
-  position: relative;
-  z-index: 100;
-  font-family: "Orbitron", sans-serif;
-  font-weight: 300;
-  text-shadow: 0 2px 17px rgba(0, 0, 0, 0.12);
-}
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
-ul {
-  padding:0;
-}
-.content {
-  flex: 1 0 auto;
-  text-align:center;
-  color:#212121;
+body {
+  margin: 0;
+  font-size: 1.1em;
+  line-height: 1.5;
+  text-align: center;
+  /* background: #2f3337 ; */
 }
 
-.button {
-  text-transform: uppercase;
-  white-space: nowrap;
-  border-radius: 4px;
-  cursor: pointer;
+img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
-
-.App-landing {
-  background-color: #0e0d0d;
+h1, h2, h3 {
+  margin:0;
+  padding: 1em 0;
 }
-
 p {
-  line-height: 2rem;
+  margin: 0;
+  padding: 1em 0;
 }
 
+#main-footer {
+  padding: 2em;
+  background: rgb(14, 13, 13);
+  color:#fffb29;
+  text-align: center;
+}
+
+
+/*Media Queries*/
+@media screen and (min-width: 700px) {
+  .grid {
+    display:grid;
+    grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+  }
+
+  #section-a .content-text{
+    padding: 0 1em;
+  }
+  .content-wrap, #section-b ul {
+    grid-column: 2/4;
+  }
+
+  .box, #main-footer article {
+    grid-column: span 2;
+  }
+
+  #section-b ul {
+    display:flex;
+    justify-content: space-around;
+
+  }
+  #section-b li {
+    width: 31%;
+  }
+
+
+}
