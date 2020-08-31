@@ -23,8 +23,8 @@ p {
 
 #main-footer {
   padding: 2em;
-  background: rgb(14, 13, 13);
-  color:#fffb29;
+  background: #faf9f5;
+  color:#6c7378;
   text-align: center;
 }
 
@@ -34,6 +34,10 @@ p {
   .grid {
     display:grid;
     /* grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr; */
+  }
+
+  img#logo {
+    display: inherit;
   }
 
   #section-a .content-text{

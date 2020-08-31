@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbar from "./Component/NavMenu/Navbar";
 import Header from "../src/Component/Header/Header";
 import LandingPg from "./Component/LandingPg/LandingPg";
 import config from "./config.js";
@@ -12,14 +11,13 @@ export default function App() {
   return (
     <>
       <Header/>
-      <Navbar/>
+     
       <main id="main">
         <LandingPg/>
       </main>
       <footer id="main-footer" class="grid">
         <article>
-
-        <p>copyright 2020</p>
+          <small>&copy; 2020 Misha Coffee & Hookah</small>
         </article>
       </footer>
     </>

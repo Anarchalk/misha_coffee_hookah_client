@@ -4,12 +4,13 @@ import styled from 'styled-components';
 const Ul = styled.ul`
   list-style: none;
   display: flex;
+  text-transform: uppercase;
   flex-flow: row nowrap;
   align-items: flex-start;
   li {
     padding: 10px 20px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 699px) {
     flex-flow: column nowrap;
     background-color: #fff;
     position: fixed;
@@ -17,12 +18,13 @@ const Ul = styled.ul`
     top: -15px;
     right: 0;
     height: 100vh;
-    width: 300px;
+    width: 250px;
     padding-top: 3.5rem;
     transition: transform 0.3s ease-in-out;
+    
     li {
-      color: #0404F;
-      font-weight: bold;
+      color: #212b36;
+      font-weight: normal;
     }
   }
 `;

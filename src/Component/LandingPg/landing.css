@@ -41,9 +41,9 @@ section#section-b {
 
 #section-b li{
   margin-bottom: 1em;
-  background: #FCF969 ;
+  background: #f2f2f2 ;
   /* color: #dff5cd; */
-  color:#000;
+  color:#412b36;
 }
 
 .card-content {
@@ -54,7 +54,7 @@ section#section-b {
 #section-c {
   /* background: # ; */
   /* color: #68b87e; */
-  color:#000;
+  color:#412b36;
 
   padding: 2em;
 }
@@ -68,9 +68,9 @@ section#section-b {
 }
 
 #section-d .box:first-child {
-  background: #e9eef3;
+  background: #f2f2f2;
   /* color: #fedada; */
-  color:#fff;
+  color:#412b36;
 
 }
 

@@ -14,6 +14,10 @@ const Nav = styled.nav`
   .logo {
     padding: 10px 0;
   }
+
+  // @media (max-width: 699px) {
+  //   padding: 0 100px;
+  // }
 `
 
 const Navbar = () => {
