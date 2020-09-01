@@ -11,7 +11,6 @@ export default function App() {
   return (
     <>
       <Header/>
-     
       <main id="main">
         <LandingPg/>
       </main>

@@ -23,7 +23,8 @@ const Ul = styled.ul`
     transition: transform 0.3s ease-in-out;
     
     li {
-      color: #212b36;
+      color: #86754d;
+      // color: #212b36;
       font-weight: normal;
     }
   }
