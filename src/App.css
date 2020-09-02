@@ -4,8 +4,6 @@ body {
   font-size: 1.1em;
   line-height: 1.5;
   text-align: center;
-  background: #2f3337 ;
-  background: #ebe7da;
   background: #fff;
 }
 
@@ -17,7 +15,9 @@ img {
 h1, h2, h3 {
   margin:0;
   padding: 1em 0;
+  color: #86754d;
 }
+
 p {
   margin: 0;
   padding: 1em 0;
@@ -45,7 +45,7 @@ p {
   #section-a .content-text{
     padding: 0 1em;
   }
-  .content-wrap, #section-b ul {
+  .content-wrap, #section-b ul, #section-coffees ul {
     grid-column: 1/4;
   }
 
@@ -53,15 +53,14 @@ p {
     grid-column: span 2;
   }
 
-  #section-b ul {
+  #section-b ul, #section-coffees ul {
     display:flex;
     justify-content: space-around;
-
   }
   section#section-b {
    padding:0;
 }
-  #section-b li {
+  #section-b li, #section-coffees li {
     width: 31%;
   }
 

@@ -1,0 +1,32 @@
+
+h3.card-title.menu {
+    font-size: 15px;
+    color: #86754d;
+}
+p#price-name, #price {
+    font-size: 15px;
+    color:#5d5d60;
+}
+
+
+#section-a .content-wrap {
+    padding: 0 1.5em;
+  }
+  
+  /* section-b */
+  #section-coffees ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 1em;
+  }
+  
+  #section-coffees li{
+    margin-bottom: 1em;
+    background: #fff;
+  }
+  
+  .card-content {
+    padding: 1.5em;
+  }
+  

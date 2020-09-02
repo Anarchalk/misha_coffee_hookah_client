@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import blue from "../../images/blue-cup.jpg";
 import yellow from "../../images/yellow-cocktail.jpg";
 import avocado from "../../images/avocado-mix.jpg";
 import "./landing.css";
-import Slideshow from "../Slideshow.js";
+import Slideshow from "../Slideshow/Slideshow";
 import slide1 from "../../images/slide1.jpg";
 import slide2 from "../../images/slide2.jpg";
 import slide3 from "../../images/slide3.jpg";
@@ -35,7 +34,9 @@ export default class LandingPg extends Component {
         <section id="section-a" className="grid">
           <article className="content-wrap">
             <Slideshow slides={slides} />
-            <h1 id='misha' className="content-title">MISHA COFFEE</h1>
+            <h1 id="misha" className="content-title">
+              MISHA COFFEE
+            </h1>
             <article className="content-text">
               <p>
                 Lorem ipsum dolor sit amet, te mel euripidis expetendis, mea ne
@@ -106,13 +107,14 @@ export default class LandingPg extends Component {
         {/* section-d */}
         <section id="section-d" className="grid">
           <article className="box">
-            <h2 className="content-title">Contact us</h2>
+            <h2 className="content-title" style={{ color: "#fff" }}>
+              Contact us
+            </h2>
             <address>
               {" "}
               <p>
                 Location: Olympic Residence, 3rd Floor, UNESCO Street,
-                Sukhbaatar District, 
-                Ulaanbaatar, Mongolia
+                Sukhbaatar District, Ulaanbaatar, Mongolia
               </p>{" "}
               <p>Tel: + (976) 7711 - 6008 </p>
             </address>
@@ -122,7 +124,7 @@ export default class LandingPg extends Component {
           </article>
           <article className="box">
             <h2 className="content-title">Social Media</h2>
-              <p>Email: mongolhookah@gmail.com</p>
+            <p>Email: mongolhookah@gmail.com</p>
             <p>
               Pne vivendo oporteat lucilius has. Ea imperdiet ullamcorper nam.
             </p>

@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import { Route } from "react-router-dom";
 import Header from "../src/Component/Header/Header";
 import LandingPg from "./Component/LandingPg/LandingPg";
+import Footer from "./Component/Footer/Footer.js";
+import Coffees from './Component/Coffees/Coffees.js';
+
 import config from "./config.js";
 import "./App.css";
 
@@ -9,21 +13,20 @@ export default function App() {
   // const [a] = useState()
 
   return (
+    //  <ErrorBoundary>
+    //    <AppContext.Provider value={value}>
     <>
-      <Header/>
-      <main id="main">
-        <LandingPg/>
-      </main>
-      <footer id="main-footer" class="grid">
-        <article>
-          <small>&copy; 2020 Misha Coffee & Hookah</small>
-        </article>
-      </footer>
+      <section className="App">
+        <Route path='/' component={Header} />
+        <main id="main">
+          <Route path='/home' component={LandingPg} />
+          <Route path='/coffees' component={Coffees} />
+        </main>
+        <Route path='/' component={Footer} />
+      </section>
     </>
 
-    //       <ErrorBoundary>
-    //         <AppContext.Provider value={value}>
-    //         </AppContext.Provider>
-    //       </ErrorBoundary>
+    //</AppContext.Provider>
+    //</ErrorBoundary>
   );
 }
