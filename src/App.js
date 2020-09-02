@@ -3,7 +3,8 @@ import { Route } from "react-router-dom";
 import Header from "../src/Component/Header/Header";
 import LandingPg from "./Component/LandingPg/LandingPg";
 import Footer from "./Component/Footer/Footer.js";
-import Coffees from './Component/Coffees/Coffees.js';
+import Coffees from "./Component/Coffees/Coffees.js";
+import Menu from "./Component/Menu/Menu.js";
 
 import config from "./config.js";
 import "./App.css";
@@ -17,12 +18,13 @@ export default function App() {
     //    <AppContext.Provider value={value}>
     <>
       <section className="App">
-        <Route path='/' component={Header} />
+        <Route path="/" component={Header} />
         <main id="main">
-          <Route path='/home' component={LandingPg} />
-          <Route path='/coffees' component={Coffees} />
+          <Route path="/home" component={LandingPg} />
+          <Route path="/coffees" component={Coffees} />
+          <Route path="/menu" component={Menu} />
         </main>
-        <Route path='/' component={Footer} />
+        <Route path="/" component={Footer} />
       </section>
     </>
 
