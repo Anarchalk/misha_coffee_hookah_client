@@ -107,7 +107,7 @@ export default class LandingPg extends Component {
         {/* section-d */}
         <section id="section-d" className="grid">
           <article className="box">
-            <h2 className="content-title" style={{ color: "#fff" }}>
+            <h2 className="content-title" style={{ color: "#f5f5f5" }}>
               Contact us
             </h2>
             <address>
