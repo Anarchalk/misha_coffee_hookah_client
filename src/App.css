@@ -35,7 +35,7 @@ p {
 @media screen and (min-width: 700px) {
   .grid {
     display:grid;
-    /* grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr; */
+    grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
   }
 
   img#logo {
@@ -45,24 +45,30 @@ p {
   #section-a .content-text{
     padding: 0 1em;
   }
-  .content-wrap, #section-b ul, #section-coffees ul {
-    grid-column: 1/4;
+  .content-wrap, 
+  #section-b ul, 
+  #section-coffees ul {
+    grid-column: 2/4;
   }
 
   .box, #main-footer article {
     grid-column: span 2;
   }
 
-  #section-b ul, #section-coffees ul {
+  #section-b ul, 
+  #section-coffees ul {
     display:flex;
-    justify-content: space-around;
+    justify-content:space-around;
   }
   section#section-b {
    padding:0;
+   
 }
-  #section-b li, #section-coffees li {
+  #section-b li {
     width: 31%;
   }
-
+  #section-coffees li {
+    width: 31%
+  }
 
 }

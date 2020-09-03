@@ -13,14 +13,7 @@ const Coffees = () => {
   return (
     <>
       COFFEES
-      {/* <hr
-        style={{
-          color: 'rgb(187 164 109)',
-          backgroundColor: '#fff',
-          padding:" 0 1em 0 2em",
-        //   height: '0.2px',
-        }}
-      /> */}
+    
       <section id="section-coffees" className="grid">
         <ul>
           <li>

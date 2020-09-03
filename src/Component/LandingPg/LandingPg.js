@@ -33,7 +33,10 @@ export default class LandingPg extends Component {
         {/* section a */}
         <section id="section-a" className="grid">
           <article className="content-wrap">
-            <Slideshow slides={slides} />
+            <article className='slides'>
+               <Slideshow slides={slides} />
+            </article>
+           
             <h1 id="misha" className="content-title">
               MISHA COFFEE
             </h1>

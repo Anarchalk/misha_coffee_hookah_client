@@ -11,12 +11,16 @@ p#price-name, #price {
     color:#5d5d60;
 }
 
-
-#section-a .content-wrap {
+/*commented out to fix the slide*/
+/* #section-a .content-wrap {
     padding: 0 1.5em;
-  }
+  } */
   
-  /* section-b */
+  /* section-coffees */
+  #section-coffees {
+    padding: 2em 1em 1em;
+  }
+
   #section-coffees ul {
     list-style: none;
     margin: 0;
