@@ -37,9 +37,9 @@ export default class LandingPg extends Component {
                <Slideshow slides={slides} />
             </article>
            
-            <h1 id="misha" className="content-title">
+            <h2 id="misha" className="content-title">
               MISHA COFFEE
-            </h1>
+            </h2>
             <article className="content-text">
               <p>
                 Lorem ipsum dolor sit amet, te mel euripidis expetendis, mea ne
