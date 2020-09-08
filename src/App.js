@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Route } from "react-router-dom";
 import Header from "../src/Component/Header/Header";
 import LandingPg from "./Component/LandingPg/LandingPg";
 import Footer from "./Component/Footer/Footer.js";
 import Coffees from "./Component/Coffees/Coffees.js";
 import Menu from "./Component/Menu/Menu.js";
-import Hookah from "./Component/Hookah/Hookah.js";
-import PrivateEvents from "./Component/PrivateEvents/PrivateEvents.js";
+import Hookah from './Component/Hookah/Hookah.js';
+import PrivateEvents from './Component/PrivateEvents/PrivateEvents.js';
 
 import config from "./config.js";
 import "./App.css";
@@ -25,8 +25,8 @@ export default function App() {
           <Route path="/home" component={LandingPg} />
           <Route path="/coffees" component={Coffees} />
           <Route path="/menu" component={Menu} />
-          <Route path="/hookah" component={Hookah} />
-          <Route path="/private-events" component={PrivateEvents} />
+          <Route path='/hookah' component={Hookah} />
+          <Route path='/private-events' component={PrivateEvents} />
         </main>
         <Route path="/" component={Footer} />
       </section>
