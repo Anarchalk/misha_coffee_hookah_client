@@ -1,0 +1,32 @@
+input[type="radio" i] {
+    margin-left: 10px;
+}
+
+label#guild {
+    font-size: 14px;
+    margin-left: 27px;
+}
+select#pay {
+    width: 91%;
+}
+button#submit {
+    border: 1px solid #fff;
+    padding: 5px 8px;
+    color: #000;
+    margin-top: 15px;
+    font-size: smaller;
+}
+
+
+/*******media query**********/
+
+@media screen and (min-width: 700px) {
+    
+textarea#comments,
+input#phone,
+input#email {
+    padding:10px;
+    border:0;
+    box-shadow: 0 0 15px 4px rgb(1,255,240);
+}
+}

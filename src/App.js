@@ -28,7 +28,7 @@ export default function App() {
           <Route path="/menu" component={Menu} />
           <Route path='/hookah' component={Hookah} />
           {/* <Route path='/private-events' component={PrivateEvents} /> */}
-          <Route path='/send' component={Form} />
+          <Route path='/private-events' component={Form} />
         </main>
         <Route path="/" component={Footer} />
       </section>

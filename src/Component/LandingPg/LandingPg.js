@@ -33,10 +33,10 @@ export default class LandingPg extends Component {
         {/* section a */}
         <section id="section-a" className="grid">
           <article className="content-wrap">
-            <article className='slides'>
-               <Slideshow slides={slides} />
+            <article className="slides">
+              <Slideshow slides={slides} />
             </article>
-           
+
             <h2 id="misha" className="content-title">
               MISHA COFFEE
             </h2>
@@ -58,7 +58,11 @@ export default class LandingPg extends Component {
           <ul>
             <li>
               <article className="card">
-                <img className="small-pictures" src={blue} alt="blue coffee cup"/>
+                <img
+                  className="small-pictures"
+                  src={blue}
+                  alt="blue coffee cup"
+                />
               </article>
               <article className="card-content">
                 <h3 className="card-title"> Sometitle 1</h3>
@@ -71,7 +75,11 @@ export default class LandingPg extends Component {
             </li>
             <li>
               <article className="card">
-                <img className="small-pictures" src={yellow} alt="mango smoothie"/>
+                <img
+                  className="small-pictures"
+                  src={yellow}
+                  alt="mango smoothie"
+                />
               </article>
               <article className="card-content">
                 <h3 className="card-title"> Boba Time!</h3>
@@ -84,7 +92,11 @@ export default class LandingPg extends Component {
             </li>
             <li>
               <article className="card">
-                <img className="small-pictures" src={avocado} alt="kiwi smoothie"/>
+                <img
+                  className="small-pictures"
+                  src={avocado}
+                  alt="kiwi smoothie"
+                />
               </article>
               <article className="card-content">
                 <h3 className="card-title"> Sometitle 3</h3>
@@ -127,6 +139,22 @@ export default class LandingPg extends Component {
           </article>
           <article className="box">
             <h2 className="content-title">Social Media</h2>
+            <ul>
+              <li>
+                <a
+                  class="social-links"
+                  href="https://www.instagram.com/misha_coffee_ub/"
+                  target="_blank"
+                >
+                  <i
+                    class="fa fa-linkedin fa-1.8x"
+                    id="ho2"
+                    aria-hidden="true"
+                  ></i>
+                  in
+                </a>
+              </li>
+            </ul>
             <p>Email: mongolhookah@gmail.com</p>
             <p>
               Pne vivendo oporteat lucilius has. Ea imperdiet ullamcorper nam.
