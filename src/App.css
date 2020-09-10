@@ -4,7 +4,7 @@ body {
   font-size: 1.1em;
   line-height: 1.5;
   text-align: center;
-  /* background: #2f3337 ; */
+  background: #fff;
 }
 
 img {
@@ -15,7 +15,9 @@ img {
 h1, h2, h3 {
   margin:0;
   padding: 1em 0;
+  color: #86754d;
 }
+
 p {
   margin: 0;
   padding: 1em 0;
@@ -23,8 +25,8 @@ p {
 
 #main-footer {
   padding: 2em;
-  background: rgb(14, 13, 13);
-  color:#fffb29;
+  background: #f0efef;
+  color:#6c7378;
   text-align: center;
 }
 
@@ -36,10 +38,16 @@ p {
     grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
   }
 
+  img#logo {
+    display: inherit;
+  }
+
   #section-a .content-text{
     padding: 0 1em;
   }
-  .content-wrap, #section-b ul {
+  .content-wrap, 
+  #section-b ul, 
+  #section-coffees ul {
     grid-column: 2/4;
   }
 
@@ -47,14 +55,22 @@ p {
     grid-column: span 2;
   }
 
-  #section-b ul {
+  #section-b ul, 
+  #section-coffees ul {
     display:flex;
-    justify-content: space-around;
-
+    justify-content:space-around;
   }
+  section#section-b {
+   padding:0;
+   
+}
   #section-b li {
     width: 31%;
   }
-
+  #section-coffees li {
+    width: 31%
+  }
 
 }
+
+/************Form style******************/

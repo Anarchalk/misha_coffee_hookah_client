@@ -1,0 +1,39 @@
+
+h3.card-title.menu {
+    font-size: 15px;
+    color: #86754d;
+    border-top: 1px solid #dbdad7;
+    padding: 1em 0 0;
+    margin-top: 22px;
+}
+p#price-name, #price {
+    font-size: 15px;
+    color:#5d5d60;
+}
+
+/*commented out to fix the slide*/
+/* #section-a .content-wrap {
+    padding: 0 1.5em;
+  } */
+  
+  /* section-coffees */
+  #section-coffees {
+    padding: 2em 1em 1em;
+  }
+
+  #section-coffees ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 1em;
+  }
+  
+  #section-coffees li{
+    margin-bottom: 1em;
+    background: #fff;
+  }
+  
+  .card-content {
+    padding: 1.5em;
+  }
+  

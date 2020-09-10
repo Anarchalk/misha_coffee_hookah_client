@@ -1,27 +1,32 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 const Ul = styled.ul`
-  list-style: none;
+  // list-style: none;
   display: flex;
+  text-transform: uppercase;
   flex-flow: row nowrap;
-  li {
+  align-items: flex-start;
+  .li-items {
     padding: 10px 20px;
+    text-decoration: none;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 699px) {
     flex-flow: column nowrap;
     background-color: #fff;
     position: fixed;
-    transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
+    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
     top: -15px;
     right: 0;
     height: 100vh;
-    width: 300px;
+    width: 250px;
     padding-top: 3.5rem;
     transition: transform 0.3s ease-in-out;
-    li {
-      color: #0404F;
-      font-weight: bold;
+
+    .li-items {
+      color: #86754d;
+      font-weight: normal;
     }
   }
 `;
@@ -29,13 +34,57 @@ const Ul = styled.ul`
 const RightNav = ({ open }) => {
   return (
     <Ul open={open}>
-      <li>About</li>
-      <li>Coffees</li>
-      <li>Menu</li>
-      <li>Hookah</li>
-      <li>Contact</li>
-    </Ul>
-  )
-}
+      <NavLink
+        activeClassName="main-nav-active2"
+        className="li-items"
+        style={{color:'#86754d'}}
+        to={"/home"}
+      >
+        About{" "}
+      </NavLink>
+      <NavLink
+        activeClassName="main-nav-active2"
+        className="li-items"
+        style={{color:'#86754d'}}
 
-export default RightNav
+        to={"/coffees"}
+      >
+        Coffees{" "}
+      </NavLink>
+      <NavLink
+        activeClassName="main-nav-active2"
+        className="li-items"
+        style={{color:'#86754d'}}
+        to={"/menu"}
+      >
+        Menu{" "}
+      </NavLink>
+      <NavLink
+        activeClassName="main-nav-active2"
+        className="li-items"
+        style={{color:'#86754d'}}
+        to={"/hookah"}
+      >
+        Hookah{" "}
+      </NavLink>
+      <NavLink
+        activeClassName="main-nav-active2"
+        className="li-items"
+        style={{color:'#86754d'}}
+        to={"/private-events"}
+      >
+        Private Events{" "}
+      </NavLink>
+      <NavLink
+        activeClassName="main-nav-active2"
+        className="li-items"
+        style={{color:'#86754d'}}
+        to={"/contact"}
+      >
+        Contact{" "}
+      </NavLink>
+    </Ul>
+   );
+};
+
+export default RightNav;

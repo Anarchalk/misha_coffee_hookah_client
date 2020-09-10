@@ -1,20 +1,18 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import blue from "../../images/blue-cup.jpg";
-import boba from "../../images/boba.jpg";
+import yellow from "../../images/yellow-cocktail.jpg";
 import avocado from "../../images/avocado-mix.jpg";
 import "./landing.css";
-import Slideshow from "../Slideshow.js";
+import Slideshow from "../Slideshow/Slideshow";
 import slide1 from "../../images/slide1.jpg";
 import slide2 from "../../images/slide2.jpg";
 import slide3 from "../../images/slide3.jpg";
 import slide4 from "../../images/slide4.jpg";
 import slide5 from "../../images/slide5.jpg";
 
-
 export default class LandingPg extends Component {
   render() {
-      // CREATE STYLES OBJECT
+    // CREATE STYLES OBJECT
     //   const s = {
     //   container: "screenW screenH dGray col",
     //   header: "flex1 fCenter fSize2",
@@ -22,8 +20,8 @@ export default class LandingPg extends Component {
     //   footer: "flex1 fCenter",
     // };
 
-      // SLIDES DATA
-      const slides = [slide1, slide2, slide3, slide4, slide5];
+    // SLIDES DATA
+    const slides = [slide1, slide2, slide3, slide4, slide5];
 
     return (
       <>
@@ -35,8 +33,13 @@ export default class LandingPg extends Component {
         {/* section a */}
         <section id="section-a" className="grid">
           <article className="content-wrap">
-          <Slideshow slides={slides} />
-            <h1 className="content-title">Misha Coffee</h1>
+            <article className="slides">
+              <Slideshow slides={slides} />
+            </article>
+
+            <h2 id="misha" className="content-title">
+              MISHA COFFEE
+            </h2>
             <article className="content-text">
               <p>
                 Lorem ipsum dolor sit amet, te mel euripidis expetendis, mea ne
@@ -44,18 +47,22 @@ export default class LandingPg extends Component {
                 copiosae senserit vel ex. Est te inermis scriptorem, has commune
                 honestatis ex, pro te illud expetenda. Vero vocibus ceteros nec
                 at. Qui ubique ignota imperdiet ut, eros labore ad nam, ne
-                vivendo oporteat lucilius has. Ea imperdiet ullamcorper nam,
-                meis propriae intellegebat ea vim. Et reque nonumy verear mea.
+                vivendo oporteat lucilius has.
               </p>
             </article>
           </article>
         </section>
+
         {/* section b */}
         <section id="section-b" className="grid">
           <ul>
             <li>
               <article className="card">
-                <img className="small-pictures" src={blue} />
+                <img
+                  className="small-pictures"
+                  src={blue}
+                  alt="blue coffee cup"
+                />
               </article>
               <article className="card-content">
                 <h3 className="card-title"> Sometitle 1</h3>
@@ -68,7 +75,11 @@ export default class LandingPg extends Component {
             </li>
             <li>
               <article className="card">
-                <img className="small-pictures" src={boba} />
+                <img
+                  className="small-pictures"
+                  src={yellow}
+                  alt="mango smoothie"
+                />
               </article>
               <article className="card-content">
                 <h3 className="card-title"> Boba Time!</h3>
@@ -81,7 +92,11 @@ export default class LandingPg extends Component {
             </li>
             <li>
               <article className="card">
-                <img className="small-pictures" src={avocado} />
+                <img
+                  className="small-pictures"
+                  src={avocado}
+                  alt="kiwi smoothie"
+                />
               </article>
               <article className="card-content">
                 <h3 className="card-title"> Sometitle 3</h3>
@@ -107,12 +122,40 @@ export default class LandingPg extends Component {
         {/* section-d */}
         <section id="section-d" className="grid">
           <article className="box">
-            <h2 className="content-title">Contact us</h2>
-            <p>Tel: 8887-5917</p>
-            <p>Email Address: mishacoffee@gmail.com</p>
+            <h2 className="content-title" style={{ color: "#f5f5f5" }}>
+              Contact us
+            </h2>
+            <address>
+              {" "}
+              <p>
+                Location: Olympic Residence, 3rd Floor, UNESCO Street,
+                Sukhbaatar District, Ulaanbaatar, Mongolia
+              </p>{" "}
+              <p>Tel: + (976) 7711 - 6008 </p>
+            </address>
+            <p>Opening Hours</p>
+            <p>Mon - Fri 9:00 am - 12:00 am</p>
+            <p>Sat - Sun 11:00 am - 12:00 am</p>
           </article>
           <article className="box">
-            <h2 className="content-title">Some other title</h2>
+            <h2 className="content-title">Social Media</h2>
+            <ul>
+              <li>
+                <a
+                  class="social-links"
+                  href="https://www.instagram.com/misha_coffee_ub/"
+                  target="_blank"
+                >
+                  <i
+                    class="fa fa-linkedin fa-1.8x"
+                    id="ho2"
+                    aria-hidden="true"
+                  ></i>
+                  in
+                </a>
+              </li>
+            </ul>
+            <p>Email: mongolhookah@gmail.com</p>
             <p>
               Pne vivendo oporteat lucilius has. Ea imperdiet ullamcorper nam.
             </p>
