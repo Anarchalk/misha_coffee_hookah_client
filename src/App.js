@@ -6,9 +6,10 @@ import Footer from "./Component/Footer/Footer.js";
 import Coffees from "./Component/Coffees/Coffees.js";
 import Menu from "./Component/Menu/Menu.js";
 import Hookah from './Component/Hookah/Hookah.js';
-import PrivateEvents from './Component/PrivateEvents/PrivateEvents.js';
+// import PrivateEvents from './Component/PrivateEvents/PrivateEvents.js';
+import Form from './Form';
 
-import config from "./config.js";
+// import config from "./config.js";
 import "./App.css";
 
 export default function App() {
@@ -26,7 +27,8 @@ export default function App() {
           <Route path="/coffees" component={Coffees} />
           <Route path="/menu" component={Menu} />
           <Route path='/hookah' component={Hookah} />
-          <Route path='/private-events' component={PrivateEvents} />
+          {/* <Route path='/private-events' component={PrivateEvents} /> */}
+          <Route path='/send' component={Form} />
         </main>
         <Route path="/" component={Footer} />
       </section>

@@ -58,7 +58,7 @@ export default class LandingPg extends Component {
           <ul>
             <li>
               <article className="card">
-                <img className="small-pictures" src={blue} />
+                <img className="small-pictures" src={blue} alt="blue coffee cup"/>
               </article>
               <article className="card-content">
                 <h3 className="card-title"> Sometitle 1</h3>
@@ -71,7 +71,7 @@ export default class LandingPg extends Component {
             </li>
             <li>
               <article className="card">
-                <img className="small-pictures" src={yellow} />
+                <img className="small-pictures" src={yellow} alt="mango smoothie"/>
               </article>
               <article className="card-content">
                 <h3 className="card-title"> Boba Time!</h3>
@@ -84,7 +84,7 @@ export default class LandingPg extends Component {
             </li>
             <li>
               <article className="card">
-                <img className="small-pictures" src={avocado} />
+                <img className="small-pictures" src={avocado} alt="kiwi smoothie"/>
               </article>
               <article className="card-content">
                 <h3 className="card-title"> Sometitle 3</h3>

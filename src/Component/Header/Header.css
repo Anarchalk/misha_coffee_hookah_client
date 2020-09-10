@@ -6,9 +6,9 @@
 
 #header #logo {
   position: relative;
-  width: 15%;
-  height: auto;
-  padding: 1em 2em;
+  width: 25%;
+  /* height: auto; */
+  padding: 0.5em 1em;
 }
 
 

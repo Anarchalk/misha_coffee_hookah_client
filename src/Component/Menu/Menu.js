@@ -1,5 +1,4 @@
 import React from "react";
-import brown from '../../images/boba.jpg';
 
 const Menu = () => {
   return (

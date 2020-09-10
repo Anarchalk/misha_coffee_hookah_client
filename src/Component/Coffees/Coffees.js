@@ -18,7 +18,7 @@ const Coffees = () => {
         <ul>
           <li>
             <article className="card">
-              <img className="small-pictures" src={latte} />
+              <img className="small-pictures" src={latte} alt='latte' />
             </article>
             <article className="card-content">
               <h3 className="card-title menu"> LATTE</h3>
@@ -28,7 +28,7 @@ const Coffees = () => {
           </li>
           <li>
             <article className="card">
-              <img className="small-pictures" src={matcha} />
+              <img className="small-pictures" src={matcha} alt='latte matcha' />
             </article>
             <article className="card-content">
               <h3 className="card-title menu">MATCHA LATTE</h3>
@@ -38,7 +38,7 @@ const Coffees = () => {
           </li>
           <li>
             <article className="card">
-              <img className="small-pictures" src={cappucino} />
+              <img className="small-pictures" src={cappucino} alt='cappucino' />
             </article>
             <article className="card-content">
               <h3 className="card-title menu">CAPPUCINO</h3>
@@ -48,7 +48,7 @@ const Coffees = () => {
           </li>
           <li>
             <article className="card">
-              <img className="small-pictures" src={espresso} />
+              <img className="small-pictures" src={espresso} alt="espresso"/>
             </article>
             <article className="card-content">
               <h3 className="card-title menu">Espresso</h3>
@@ -58,7 +58,7 @@ const Coffees = () => {
           </li>
           <li>
             <article className="card">
-              <img className="small-pictures" src={americano} />
+              <img className="small-pictures" src={americano} alt="americano"/>
             </article>
             <article className="card-content">
               <h3 className="card-title menu">AMERICANO</h3>
@@ -68,7 +68,7 @@ const Coffees = () => {
           </li>
           <li>
             <article className="card">
-              <img className="small-pictures" src={dalgona} />
+              <img className="small-pictures" src={dalgona} alt="dalgona coffee" />
             </article>
             <article className="card-content">
               <h3 className="card-title menu">DALGONA COFFEE</h3>
@@ -78,7 +78,7 @@ const Coffees = () => {
           </li>
           <li>
             <article className="card">
-              <img className="small-pictures" src={irish} />
+              <img className="small-pictures" src={irish} alt="irish coffee"/>
             </article>
             <article className="card-content">
               <h3 className="card-title menu">IRISH COFFEE</h3>
