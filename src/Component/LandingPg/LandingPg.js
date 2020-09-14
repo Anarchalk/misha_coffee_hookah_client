@@ -9,28 +9,17 @@ import slide2 from "../../images/slide2.jpg";
 import slide3 from "../../images/slide3.jpg";
 import slide4 from "../../images/slide4.jpg";
 import slide5 from "../../images/slide5.jpg";
+import Contact from '../Contact/Contact.js';
 
 export default class LandingPg extends Component {
   render() {
-    // CREATE STYLES OBJECT
-    //   const s = {
-    //   container: "screenW screenH dGray col",
-    //   header: "flex1 fCenter fSize2",
-    //   main: "flex8 white",
-    //   footer: "flex1 fCenter",
-    // };
 
     // SLIDES DATA
     const slides = [slide1, slide2, slide3, slide4, slide5];
 
     return (
       <>
-        {/* showcase */}
-        {/* <section id="showcase" className="grid">
-          <article className="bg-image">
-          </article>
-        </section> */}
-        {/* section a */}
+       {/* section a */}
         <section id="section-a" className="grid">
           <article className="content-wrap">
             <article className="slides">
@@ -120,47 +109,7 @@ export default class LandingPg extends Component {
           </article>
         </section>
         {/* section-d */}
-        <section id="section-d" className="grid">
-          <article className="box">
-            <h2 className="content-title" style={{ color: "#f5f5f5" }}>
-              Contact us
-            </h2>
-            <address>
-              {" "}
-              <p>
-                Location: Olympic Residence, 3rd Floor, UNESCO Street,
-                Sukhbaatar District, Ulaanbaatar, Mongolia
-              </p>{" "}
-              <p>Tel: + (976) 7711 - 6008 </p>
-            </address>
-            <p>Opening Hours</p>
-            <p>Mon - Fri 9:00 am - 12:00 am</p>
-            <p>Sat - Sun 11:00 am - 12:00 am</p>
-          </article>
-          <article className="box">
-            <h2 className="content-title">Social Media</h2>
-            <ul>
-              <li>
-                <a
-                  class="social-links"
-                  href="https://www.instagram.com/misha_coffee_ub/"
-                  target="_blank"
-                >
-                  <i
-                    class="fa fa-linkedin fa-1.8x"
-                    id="ho2"
-                    aria-hidden="true"
-                  ></i>
-                  in
-                </a>
-              </li>
-            </ul>
-            <p>Email: mongolhookah@gmail.com</p>
-            <p>
-              Pne vivendo oporteat lucilius has. Ea imperdiet ullamcorper nam.
-            </p>
-          </article>
-        </section>
+        <Contact />
       </>
     );
   }

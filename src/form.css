@@ -1,32 +1,76 @@
-input[type="radio" i] {
-    margin-left: 10px;
+
+.container-form {
+    font-family: "Neuzeit Office",sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: left !important;
 }
 
-label#guild {
-    font-size: 14px;
-    margin-left: 27px;
+input#comments, 
+#duration, 
+#type, 
+#guests, 
+#fullname, 
+#company,
+#phone,
+#email, 
+textarea#comments,
+input {
+    width:100%; 
+    font-family: "Neuzeit Office",sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 17px;
+    height: auto;
+    background: #fff;
+    color: #444;
+    border: 1px solid rgba(0,0,0,0.15);
+    margin: 0;
+    padding: 14px 20px;
+    vertical-align: middle;
+    border-radius: 3px;
+    margin-bottom: 0.5em;
 }
+
+#btns {
+    border: 1px solid #86754d;
+    background: #86754d;
+    border-radius: 2px;
+    display: inline-block;
+    margin: 0;
+    padding: 14px 3em;
+    color: #fdfdf9;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    height: auto;
+    transition: background-color 300ms ease-out;
+    margin: 1.5em 0;
+    width: auto;
+}
+
+label {
+    font-size: 14px;
+    color:#86754d;
+}
+
 select#pay {
     width: 91%;
 }
-button#submit {
-    border: 1px solid #fff;
-    padding: 5px 8px;
-    color: #000;
-    margin-top: 15px;
-    font-size: smaller;
-}
+
 
 
 /*******media query**********/
 
 @media screen and (min-width: 700px) {
-    
-textarea#comments,
-input#phone,
-input#email {
-    padding:10px;
-    border:0;
-    box-shadow: 0 0 15px 4px rgb(1,255,240);
+
+.container-form {
+  max-width: 600px;
 }
+label {
+    font-size: 16px;
+}
+
 }

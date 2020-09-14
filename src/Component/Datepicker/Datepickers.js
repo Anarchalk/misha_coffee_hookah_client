@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
-import DatePicker from 'react-datepicker';
- 
+import React, { Component } from "react";
+import DatePicker from "react-datepicker";
+
 import "react-datepicker/dist/react-datepicker.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class DatePickers extends Component {
-
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
-      startDate: new Date()
+      startDate: new Date(),
     };
     this.handleChange = this.handleChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
@@ -17,34 +16,44 @@ class DatePickers extends Component {
 
   handleChange(date) {
     this.setState({
-      startDate: date
-    })
+      startDate: date,
+    });
   }
 
   onFormSubmit(e) {
     e.preventDefault();
-    console.log(this.state.startDate)
+    console.log(this.state.startDate);
   }
- 
+
   render() {
     return (
-      <form onSubmit={ this.onFormSubmit }>
+      <form onSubmit={this.onFormSubmit}>
         <div className="form-group">
           <DatePicker
-              selected={ this.state.startDate }
-              onChange={ this.handleChange }
-              showTimeSelect
-              timeFormat="HH:mm"
-              timeIntervals={20}
-              timeCaption="time"
-              dateFormat="MMMM d, yyyy h:mm aa"
+            selected={this.state.startDate}
+            onChange={this.handleChange}
+            showTimeSelect
+            timeFormat="HH:mm"
+            timeIntervals={20}
+            timeCaption="time"
+            dateFormat="MMMM d, yyyy h:mm aa"
           />
-          <button className="btn btn-primary">Show Date</button>
+          {/* <button
+            style={{
+              backgroundColor: "#86754d",
+              borderColor: "#86754d",
+              padding: ".4rem .5rem",
+              borderRadius: "2px",
+              margin: "-2px 0 2px",
+            }}
+            className="btn btn-primary"
+          >
+            Show Date
+          </button> */}
         </div>
       </form>
     );
   }
-  
 }
 
 export default DatePickers;
