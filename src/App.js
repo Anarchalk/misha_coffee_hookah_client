@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import {BrowserRouter as Router , Route} from "react-router-dom";
 import Header from "../src/Component/Header/Header";
 import LandingPg from "./Component/LandingPg/LandingPg";
 import Footer from "./Component/Footer/Footer.js";
@@ -20,8 +20,11 @@ export default function App() {
     //  <ErrorBoundary>
     //    <AppContext.Provider value={value}>
     <>
+    <Router>
       <section className="App">
         <Route path="/" component={Header} />
+        <Route exact path="/" component={LandingPg} />
+
         <main id="main">
           <Route path="/home" component={LandingPg} />
           <Route path="/coffees" component={Coffees} />
@@ -33,6 +36,7 @@ export default function App() {
         </main>
         <Route path="/" component={Footer} />
       </section>
+    </Router>
     </>
 
     //</AppContext.Provider>
