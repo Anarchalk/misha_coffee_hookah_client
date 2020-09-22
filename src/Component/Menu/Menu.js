@@ -1,8 +1,8 @@
 import React from "react";
 import brown from "../../images/menu-images/boba.jpg";
-import cheesecake from '../../images/menu-images/cheesecake2.jpg';
-import cupcake from '../../images/menu-images/cupcake.jpg';
-import chocolate from '../../images/menu-images/chocolate.jpg';
+import cheesecake from "../../images/menu-images/cheesecake2.jpg";
+import cupcake from "../../images/menu-images/cupcake.jpg";
+import chocolate from "../../images/menu-images/chocolate.jpg";
 
 import "./menu.css";
 
@@ -12,10 +12,14 @@ const Menu = () => {
       Menu
       <section id="section-coffees" className="grid">
         <ul>
-            <h3>BUBBLE TEA</h3>
+          <h3>BUBBLE TEA</h3>
           <li>
             <article className="card">
-              <img className="small-pictures" src={brown} />
+              <img
+                className="small-pictures"
+                src={brown}
+                alt="brown sugar bubble tea"
+              />
             </article>
             <article className="card-content">
               {/* <h3 className="card-title menu">BUBBLE TEA</h3> */}
@@ -25,7 +29,11 @@ const Menu = () => {
           </li>
           <li>
             <article className="card">
-              <img className="small-pictures" src={brown} />
+              <img
+                className="small-pictures"
+                src={brown}
+                alt="taro bubble tea"
+              />
               {/* <img className="small-pictures" src={} /> */}
             </article>
             <article className="card-content">
@@ -36,7 +44,11 @@ const Menu = () => {
           </li>
           <li>
             <article className="card">
-              <img className="small-pictures" src={brown} />
+              <img
+                className="small-pictures"
+                src={brown}
+                alt="strawberry bubble tea"
+              />
               {/* <img className="small-pictures" src={} /> */}
             </article>
             <article className="card-content">
@@ -47,7 +59,11 @@ const Menu = () => {
           </li>
           <li>
             <article className="card">
-              <img className="small-pictures" src={brown} />
+              <img
+                className="small-pictures"
+                src={brown}
+                alt="matcha bubble tea"
+              />
               {/* <img className="small-pictures" src={} /> */}
             </article>
             <article className="card-content">
@@ -59,7 +75,11 @@ const Menu = () => {
           <h3>DESSERTS</h3>
           <li>
             <article className="card">
-              <img className="small-pictures" src={cheesecake} />
+              <img
+                className="small-pictures"
+                src={cheesecake}
+                alt="slice of cheesecake on a plate"
+              />
             </article>
             <article className="card-content">
               <h3 className="card-title menu">CHEESECAKE</h3>
@@ -69,7 +89,7 @@ const Menu = () => {
           </li>
           <li>
             <article className="card">
-              <img className="small-pictures" src={cupcake} />
+              <img className="small-pictures" src={cupcake} alt="cupcakes" />
             </article>
             <article className="card-content">
               <h3 className="card-title menu">CUPCAKE</h3>
@@ -79,7 +99,11 @@ const Menu = () => {
           </li>
           <li>
             <article className="card">
-              <img className="small-pictures" src={chocolate} />
+              <img
+                className="small-pictures"
+                src={chocolate}
+                alt="handmade chocolate"
+              />
             </article>
             <article className="card-content">
               <h3 className="card-title menu">HANDMADE CHOCO</h3>

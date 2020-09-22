@@ -37,13 +37,13 @@ const Contact = (props) => {
           <p>Let's connect on social media </p>
           <ul className="social" id="holbogd">
             <li>
-              <a href="https://www.instagram.com/misha_coffee_ub/" target="_blank"><img className="contact-icon" src={insta} alt="instagram" /></a>
+              <a href="https://www.instagram.com/misha_coffee_ub/" target="_blank" rel="noopener noreferrer"><img className="contact-icon" src={insta} alt="instagram" /></a>
             </li>
             <li>
-              <a href="https://www.facebook.com/misha_coffee_ub-108078303885092" target="_blank"><img className="contact-icon" src={facebook} alt="facebook" /></a>
+              <a href="https://www.facebook.com/misha_coffee_ub-108078303885092" target="_blank" rel="noopener noreferrer"><img className="contact-icon" src={facebook} alt="facebook" /></a>
             </li>
              <li>
-              <a href="mailto: misha.coffee.hookah@gmail.com" target="_blank"><img className="contact-icon" src={email} alt="envelope" /></a>
+              <a href="mailto: misha.coffee.hookah@gmail.com" target="_blank" rel="noopener noreferrer"><img className="contact-icon" src={email} alt="envelope" /></a>
             </li>
           </ul>
         </article>
