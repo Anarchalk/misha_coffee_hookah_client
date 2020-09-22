@@ -2,6 +2,7 @@ import React from "react";
 import brown from "../../images/menu-images/boba.jpg";
 import cheesecake from '../../images/menu-images/cheesecake2.jpg';
 import cupcake from '../../images/menu-images/cupcake.jpg';
+import chocolate from '../../images/menu-images/chocolate.jpg';
 
 import "./menu.css";
 
@@ -78,7 +79,7 @@ const Menu = () => {
           </li>
           <li>
             <article className="card">
-              {/* <img className="small-pictures" src={} /> */}
+              <img className="small-pictures" src={chocolate} />
             </article>
             <article className="card-content">
               <h3 className="card-title menu">HANDMADE CHOCO</h3>

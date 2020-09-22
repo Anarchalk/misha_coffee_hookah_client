@@ -25,6 +25,7 @@ export default function App() {
         <Route path="/" component={Header} />
         <Route exact path="/" component={LandingPg} />
 
+
         <main id="main">
           <Route path="/home" component={LandingPg} />
           <Route path="/coffees" component={Coffees} />
@@ -32,7 +33,6 @@ export default function App() {
           <Route path='/hookah' component={Hookah} />
           <Route path='/private-events' component={Form} />
           <Route path='/contact' component={Contact} />
-
         </main>
         <Route path="/" component={Footer} />
       </section>

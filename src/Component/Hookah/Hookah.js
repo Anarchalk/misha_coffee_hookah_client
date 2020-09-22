@@ -421,16 +421,6 @@ const Hookah = () => {
           </li>
         </ul>
       </section>
-      {/* section-d */}
-      <section id="section-d" className="grid">
-        <article className="box">
-          <h2 className="content-title">Social Media</h2>
-          <p>Email: mongolhookah@gmail.com</p>
-          <p>
-            Pne vivendo oporteat lucilius has. Ea imperdiet ullamcorper nam.
-          </p>
-        </article>
-      </section>
     </>
   );
 };
